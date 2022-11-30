@@ -19,8 +19,7 @@ function App() {
 
   const [noFriends, setNoFriends] = useState(true);
   const [attributes, setAttributes] = useState({
-    "notFluffy": false,
-    "notEndangered": false,
+ 
     "fluffy": false,
     "endangered": false
   });
@@ -104,23 +103,16 @@ function App() {
     }
   }
 
-  function toggleAttribute(attribute, isNot) {
+  function toggleAttribute(attribute) {
     const original = attribute;
-    if (isNot && attribute=="fluffy") {
-        attribute = "notFluffy"
-    }
-    else if (isNot && attribute=="endangered") {
-      attribute = "notEndangered"
-    }
+    
     if (!attributes[attribute]) {
       const copy = [...currentAnimals];
       var filteredArray = []
-      if (isNot) {
-        filteredArray = copy.filter((a)=>(!a[original]))
-      }
-      else {
+      
+      
         filteredArray = copy.filter((a)=>(a[original]))
-      }
+      
       
       updateCurrentAnimals(filteredArray)
       const oldAttributes = attributes;
@@ -143,15 +135,9 @@ function App() {
 
       for(const key in attributes){
         if(attributes[key]) {
-          if (key=="notEndangered") {
-            all=all.filter((a)=>!a['endangered'])
-          }
-          else if (key=="notFluffy") {
-            all=all.filter((a)=>!a['fluffy'])
-          }
-          else {
+          
             all=all.filter((a)=>a[key])
-          }
+          
           
         }
       }
@@ -203,10 +189,9 @@ function App() {
               </form>
               <h4>Filter:</h4>
               <form>
-                <FilterOption by="fluffy" not={false} category="filter" label="Fluffy animals" eventKey="fluffy" toggleAttribute={toggleAttribute}/>
-                <FilterOption by="endangered"  not={false} category="filter" label="Endangered animals" eventKey="endangered" toggleAttribute={toggleAttribute}/>
-                <FilterOption by="fluffy" not={true} category="filter" label="Not Fluffy animals" eventKey="fluffy" toggleAttribute={toggleAttribute}/>
-                <FilterOption by="endangered"  not={true} category="filter" label="Not Endangered animals" eventKey="endangered" toggleAttribute={toggleAttribute}/>
+                <FilterOption by="fluffy"  category="filter" label="Fluffy animals" eventKey="fluffy" toggleAttribute={toggleAttribute}/>
+                <FilterOption by="endangered"   category="filter" label="Endangered animals" eventKey="endangered" toggleAttribute={toggleAttribute}/>
+                
               </form>
               <form>
                 <div className="option">
