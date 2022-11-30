@@ -114,6 +114,12 @@ button:hover {
 .option {
   color: gray;
 }
-
+.stackHeight {
+  margin-top:0;
+}
+#height {
+  font-size: x-large;
+  font-weight:bold;
+}
 
 

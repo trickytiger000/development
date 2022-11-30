@@ -206,7 +206,7 @@ function App() {
           </div>
           
           <div className='bestFriends'>
-            <p className='stack'>Best Friend Stack Height: {stackHeight} inches</p>
+            
             <h3>
               Best Friends:
             </h3>
@@ -238,6 +238,7 @@ function App() {
           <p>
             How tall can you make it?
           </p>
+          <p className='stackHeight'>Best Friend Stack Height: <span id="height">{stackHeight} inches</span></p>
           {friendsList.map((item, index) => (
             <img alt={item.name} className="stack" src={`/images/${item.image}`} key={item.name} style={{width: `calc(20px * ${item.height})`, height:`calc(20px * ${item.height})`}}/>
           ))}
