@@ -41,6 +41,7 @@
 }
 .heart {
     width: 40px;
+    font-size: x-small;
 }
 .friendButton {
     display: flex;

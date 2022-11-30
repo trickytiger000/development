@@ -19,13 +19,16 @@ function App() {
 
   const [noFriends, setNoFriends] = useState(true);
   const [attributes, setAttributes] = useState({
+    "notFluffy": false,
+    "notEndangered": false,
     "fluffy": false,
     "endangered": false
   });
+  // const [doubleChecked, setDoubleChecked] = useState(false)
 
   function reorderStack() {
     updateFriendsList(sortDefault(friendsList, "height"))
-    this.forceUpdate()
+    
   }
 
 
@@ -101,27 +104,55 @@ function App() {
     }
   }
 
-  function toggleAttribute(attribute) {
-
+  function toggleAttribute(attribute, isNot) {
+    const original = attribute;
+    if (isNot && attribute=="fluffy") {
+        attribute = "notFluffy"
+    }
+    else if (isNot && attribute=="endangered") {
+      attribute = "notEndangered"
+    }
     if (!attributes[attribute]) {
       const copy = [...currentAnimals];
-      const filteredArray = copy.filter((a)=>(a[attribute]))
+      var filteredArray = []
+      if (isNot) {
+        filteredArray = copy.filter((a)=>(!a[original]))
+      }
+      else {
+        filteredArray = copy.filter((a)=>(a[original]))
+      }
+      
       updateCurrentAnimals(filteredArray)
       const oldAttributes = attributes;
-      oldAttributes[attribute] = true;
+
+     oldAttributes[attribute] = true;
+
+      
       setAttributes(oldAttributes)
     }
     else {
       const oldAttributes = attributes;
-      oldAttributes[attribute] = false;
+      
+        oldAttributes[attribute] = false;
+      
+      
       setAttributes(oldAttributes)
-      console.log('yes')
+   
       
       var all = [...allAnimals];
 
       for(const key in attributes){
         if(attributes[key]) {
-          all=all.filter((a)=>a[key])
+          if (key=="notEndangered") {
+            all=all.filter((a)=>!a['endangered'])
+          }
+          else if (key=="notFluffy") {
+            all=all.filter((a)=>!a['fluffy'])
+          }
+          else {
+            all=all.filter((a)=>a[key])
+          }
+          
         }
       }
       if(showFriends) {
@@ -172,8 +203,10 @@ function App() {
               </form>
               <h4>Filter:</h4>
               <form>
-                <FilterOption by="fluffy" category="filter" label="Fluffy animals" eventKey="fluffy" toggleAttribute={toggleAttribute}/>
-                <FilterOption by="endangered" category="filter" label="Endangered animals" eventKey="endangered" toggleAttribute={toggleAttribute}/>
+                <FilterOption by="fluffy" not={false} category="filter" label="Fluffy animals" eventKey="fluffy" toggleAttribute={toggleAttribute}/>
+                <FilterOption by="endangered"  not={false} category="filter" label="Endangered animals" eventKey="endangered" toggleAttribute={toggleAttribute}/>
+                <FilterOption by="fluffy" not={true} category="filter" label="Not Fluffy animals" eventKey="fluffy" toggleAttribute={toggleAttribute}/>
+                <FilterOption by="endangered"  not={true} category="filter" label="Not Endangered animals" eventKey="endangered" toggleAttribute={toggleAttribute}/>
               </form>
               <form>
                 <div className="option">
@@ -221,7 +254,7 @@ function App() {
             How tall can you make it?
           </p>
           {friendsList.map((item, index) => (
-            <img className="stack" src={`/images/${item.image}`} key={item.name} style={{width: `calc(20px * ${item.height})`, height:`calc(20px * ${item.height})`}}/>
+            <img alt={item.name} className="stack" src={`/images/${item.image}`} key={item.name} style={{width: `calc(20px * ${item.height})`, height:`calc(20px * ${item.height})`}}/>
           ))}
         </div>
 

@@ -7,6 +7,7 @@ export default function Animal(props) {
   const [heartState, updateHeartState] = useState(checkFriendHeart);
   const [heartText, updateHeartText] = useState(checkFriendText);
 
+
   function checkFriendHeart () {
     if (props.animal.isfriend) {
       return "cards-heart.svg";
@@ -23,6 +24,7 @@ export default function Animal(props) {
       return "Add to best friends list?";
     }
   }
+
 function toggleHeart() {
   if (heartState == "cards-heart-outline.svg") {
     updateHeartState("cards-heart.svg")
@@ -50,7 +52,7 @@ function toggleHeart() {
             <p>Height: {props.animal.height} inches</p>
           </div>
           <div className='friendButton'>
-            <img className="heart" src={`/images/${heartState}`} onClick={()=>toggleHeart()}/>
+            <img alt="heart" className="heart" src={`/images/${heartState}`} onClick={()=>toggleHeart()}/>
             <p>{heartText}</p>
           </div>
         </div>
