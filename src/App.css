@@ -1,38 +1,119 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Henny+Penny&display=swap');
+html {
+  font-family: 'Work Sans', sans-serif;
+  box-sizing: border-box;
+  
+}
+h1 {
+  font-size: 3rem;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#subtitle {
+  text-align: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h2, h1 {
+  font-family: 'Henny Penny', cursive;
+  margin-bottom: 0;
+  
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h3 {
+  margin-top: 0px;
+}
+h4 {
+  margin-bottom: 10px;
+  font-style:italic;
+  font-size: 1.2rem;
+}
+.App {
   display: flex;
+  flex-direction: row;
+  /* grid-template-columns: max-content min-content max-content; */
+  
+}
+.menu {
+  
+  min-width: 200px;
+  padding: 20px;
+  margin-right: 20px;
+  background: white;
+  border: 1px lightgray solid;
+  border-radius: 1em;
+  filter: drop-shadow(5px 5px 0 lightgray);
+  height: min-content;
+  width: 350px;
+}
+
+form {
+  margin-bottom: 30px;
+  margin-left: 10px;
+}
+.bestieName {
+  font-size: larger;
+  text-decoration: underline;
+}
+.bestFriends {
+  
+  padding: 20px;
+  background: white;
+  border: 2px lightgray solid;
+  border-radius: 1em;
+  filter: drop-shadow(5px 5px 0 lightgray);
+  height:fit-content;
+  margin-top: 10px;
+  width: 350px;
+}
+#friendStackImages {
+  display: flex;
+  margin-left: 20px;
+  margin-top: 75px;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  min-width: 100px;
+  padding: 20px;
+  background: white;
+  border: 2px lightgray solid;
+  border-radius: 1em;
+  filter: drop-shadow(5px 5px 0 lightgray);
+  height:fit-content;
+  overflow: hidden;
+}
+header {
+  width: 350px;
+  
+}
+#leftbar {
+  display: block;
+  position: fixed;
+  left:100px;
+  top:200px;
+  max-width:4px;
+}
+.stack {
+  display: block;
+  object-fit: cover;
 }
 
-.App-link {
-  color: #61dafb;
+button {
+  background: lightgray;
+  border-radius: 0.5em;
+  font-size: 1rem;
+  border: 2px black solid;
+  filter: drop-shadow(5px 5px 0 black);
+  padding: 10px;
+  font-weight: bold;
+  transition: 0.3s;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button:hover {
+  filter: drop-shadow(0 0 0 black);
+  transition: 0.3s;
+  cursor: pointer;
 }
+
+.option {
+  color: gray;
+}
+
+
+

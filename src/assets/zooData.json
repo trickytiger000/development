@@ -1,0 +1,134 @@
+[
+    {
+        "name": "Gloria",
+        "sci_name": "Hymenopus coronatus",
+        "common_name": "orchid mantis",
+        "age":0.5,
+        "height": 2,
+        "endangered": false,
+        "fluffy": false,
+        "image": "flower-mantis.jpg",
+        "isFriend": false
+    },
+    {
+        "name": "Stinkus",
+        "sci_name": "Petaurus breviceps",
+        "common_name": "sugar glider",
+        "age":3,
+        "height": 5,
+        "endangered": false,
+        "fluffy": true,
+        "image": "sugar_glider.jpg",
+        "isFriend": false
+    },
+    {
+        "name": "Creeper",
+        "sci_name": "Opisthopatus roseus",
+        "common_name": "pink velvet worm",
+        "age":0.2,
+        "height": 0.5,
+        "endangered": true,
+        "fluffy": false,
+        "image": "velvet_worm.jpg",
+        "isFriend": false
+    },
+    {
+        "name": "Trixie",
+        "sci_name": "Chlamyphorus truncatus",
+        "common_name": "pink fairy armadillo",
+        "age":5,
+        "height": 3,
+        "endangered": true,
+        "fluffy": true,
+        "image": "fairy_armadillo.jpeg",
+        "isFriend": false
+    },
+    {
+        "name": "Ziggy",
+        "sci_name": "Cyclopes didactylus",
+        "common_name": "silky Anteater",
+        "age":3,
+        "height": 12,
+        "endangered": false,
+        "fluffy": true,
+        "image": "silky_anteater.jpg",
+        "isFriend": false
+    },
+    {
+        "name": "Mr. Balogna",
+        "sci_name": "Helarctos malayanus",
+        "common_name": "sun bear",
+        "age":5,
+        "height": 28,
+        "endangered": true,
+        "fluffy": true,
+        "image": "sunbear.jpg",
+        "isFriend": false
+    },
+    {
+        "name": "Lil Balogna",
+        "sci_name": "Ailurus fulgens",
+        "common_name": "red panda",
+        "age":10,
+        "height": 10,
+        "endangered": true,
+        "fluffy": true,
+        "image": "red_panda.jpg",
+        "isFriend": false
+    },
+    {
+        "name": "Professor Dingbat",
+        "sci_name": "Saguinus imperator",
+        "common_name": "emperor tamarin",
+        "age":4,
+        "height": 9,
+        "endangered": false,
+        "fluffy": true,
+        "image": "emperor_tamarin.jpg",
+        "isFriend": false
+    },
+    {
+        "name": "Carmen",
+        "sci_name": "Petrosaltator rozeti",
+        "common_name": "north African elephant shrew",
+        "age":1.5,
+        "height": 2,
+        "endangered": false,
+        "fluffy": true,
+        "image": "elephant_shrew.jpg",
+        "isFriend": false
+    },
+    {
+        "name": "Pokemon",
+        "sci_name": "Pteraeolidia ianthina",
+        "common_name": "blue dragon nudibranch",
+        "age":2.3,
+        "height": 0.1,
+        "endangered": false,
+        "fluffy": false,
+        "image": "blue_dragon.jpg",
+        "isFriend": false
+    },
+    {
+        "name": "Jeremiah",
+        "sci_name": "Phycodurus eques",
+        "common_name": "leafy seadragon",
+        "age":0.8,
+        "height": 11,
+        "endangered": false,
+        "fluffy": false,
+        "image": "leafy_seadragon.jpg",
+        "isFriend": false
+    },
+    {
+        "name": "Papa",
+        "sci_name": "Falco sparverius",
+        "common_name": "american kestrel",
+        "age":6.5,
+        "height": 8,
+        "endangered": false,
+        "fluffy": true,
+        "image": "american-kestrel.jpg",
+        "isFriend": false
+    }
+]
