@@ -240,7 +240,7 @@ function App() {
           </p>
           <p className='stackHeight'>Best Friend Stack Height: <span id="height">{stackHeight} inches</span></p>
           {friendsList.map((item, index) => (
-            <img alt={item.name} className="stack" src={`/images/${item.image}`} key={item.name} style={{width: `calc(20px * ${item.height})`, height:`calc(20px * ${item.height})`}}/>
+            <img alt={item.name} className="stack" src={process.env.PUBLIC_URL+ `/images/${item.image}`} key={item.name} style={{width: `calc(20px * ${item.height})`, height:`calc(20px * ${item.height})`}}/>
           ))}
         </div>
 
