@@ -2,18 +2,23 @@ import './Animal.css'
 import '../App.css';
 import { useState } from "react";
 
+import filledHeart from "../assets/images/cards-heart.svg"
+import emptyHeart from "../assets/images/cards-heart-outline.svg"
+
 
 export default function Animal(props) {
   const [heartState, updateHeartState] = useState(checkFriendHeart);
   const [heartText, updateHeartText] = useState(checkFriendText);
 
 
+
+
   function checkFriendHeart () {
     if (props.animal.isfriend) {
-      return "cards-heart.svg";
+      return filledHeart;
     }
     else {
-      return "cards-heart-outline.svg";
+      return emptyHeart;
     }
   }
   function checkFriendText () {
@@ -26,14 +31,14 @@ export default function Animal(props) {
   }
 
 function toggleHeart() {
-  if (heartState == "cards-heart-outline.svg") {
-    updateHeartState("cards-heart.svg")
+  if (heartState == emptyHeart) {
+    updateHeartState(filledHeart)
     updateHeartText("Added to best friends list!")
     props.addToFriends(props.animal)
     props.animal.isfriend = true;
   }
   else {
-    updateHeartState("cards-heart-outline.svg")
+    updateHeartState(emptyHeart)
     updateHeartText("Add to best friends list?")
     props.removeFromFriends(props.animal)
     props.animal.isfriend = false;
@@ -52,7 +57,7 @@ function toggleHeart() {
             <p>Height: {props.animal.height} inches</p>
           </div>
           <div className='friendButton'>
-            <img alt="heart" className="heart" src={`/images/${heartState}`} onClick={()=>toggleHeart()}/>
+            <img alt="heart" className="heart" src={heartState} onClick={()=>toggleHeart()}/>
             <p>{heartText}</p>
           </div>
         </div>
